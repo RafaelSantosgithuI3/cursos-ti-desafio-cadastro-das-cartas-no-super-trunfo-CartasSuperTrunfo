@@ -18,16 +18,21 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 	printf("DESAFIO SUPER TRUNFO \n");
-        char codigo[3]; //codigo da cidade
-        char nome[20]; // nome da cidade
-        int populacao; // população da cidade
-        float area; // área da cidade
-        float pib; //pib da cidade
-        int npontosturi; //numero de pontos turisticos
+    printf("Comparativo de PIB per capita, o maior sera o vencedor! \n");
 
+        char estado[20]; 
+        char codigo[3];
+        char nome[20];
+        int populacao;
+        float area;
+        float pib;
+        int npontosturi;
+       
 
-       printf("Para começar, digite o codigo da cidade: ");
+       printf("Para começar, digite o codigo da carta1: ");
        scanf("%s", &codigo);
+       printf("Digite o nome do estado: ");
+       scanf("%s", &estado);
        printf("Digite o nome da cidade: ");
        scanf("%s", &nome);
        printf("Informe a população da cidade: ");
@@ -39,23 +44,64 @@ int main() {
        printf("Diga a quantidade de pontos turisticos da cidade: ");
        scanf("%d", &npontosturi);
 
+
+       float densi = populacao / area;
+       float pibper = pib / populacao;
+      
          printf("\n");
-         printf("Carta cadastrada com sucesso!\n");   
+         printf("Carta1 cadastrada com sucesso!\n");   
          printf("\n");
 
-         printf("Segue abaixo as informações da cidade cadastrada\n");
-         printf("\n");
+    
+            char estado2[20]; 
+            char codigo2[3];
+            char nome2[20];
+            int populacao2;
+            float area2;
+            float pib2;
+            int npontosturi2;
+            
+    
+            printf("Para começar, digite o codigo da carta2: ");
+            scanf("%s", &codigo2);
+            printf("Digite o nome do estado2: ");
+            scanf("%s", &estado2);
+            printf("Digite o nome da cidade2: ");
+            scanf("%s", &nome2);
+            printf("Informe a população da cidade2: ");
+            scanf("%d", &populacao2);
+            printf("Digite a área da cidade2: ");
+            scanf("%f", &area2);
+            printf("Informe o PIB2: ");
+            scanf("%f", &pib2);
+            printf("Diga a quantidade de pontos turisticos da cidade2: ");
+            scanf("%d", &npontosturi2);
+            
+            float densi2 = populacao2 / area2;
+            float pibper2 = pib2 / populacao2;
 
-         printf("Codigo da cidade: %s\n", codigo);
-         printf("Nome da cidade: %s\n", nome);
-         printf("População da cidade: %d\n", populacao);
-         printf("Área: %.2f\n", area);
-         printf("PIB: %.2f\n", pib);
-         printf("Pontos turisticos: %d\n", npontosturi);
+                printf("\n");
+                printf("Carta2 cadastrada com sucesso!\n");   
+                printf("\n");
 
-         printf("\n");
-         printf("Obrigado por participar do desafio Super Trunfo!\n");
-         printf("\n");
+                printf("Informações da carta 1\n");
+                printf("Densidade populacional: %.2f\n", densi);
+                printf("PIB per capita: %.2f\n", pibper);
+                printf("\n");
+                printf("Informações da carta 2\n");
+                printf("Densidade populacional2: %.2f\n", densi2);
+                printf("PIB per capita2: %.2f\n", pibper2);
+                printf("\n");
+                       
+                    if (pibper > pibper2) {
+                        printf("O vencedor é a carta 1\n");
+                    } else {
+                        printf("O vencedor é a carta 2\n");
+                    }
+
+                        printf("\n");
+                        printf("Obrigado por participar do desafio Super Trunfo!\n");
+                        printf("\n");
 
     return 0;
 }
